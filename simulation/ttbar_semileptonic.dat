@@ -1,0 +1,22 @@
+generate p p > t t~
+define l = e+ mu+ e- mu-
+define v = ve vm ve~ vm~
+output ttbar_semileptonic
+launch
+madspin=ON
+shower=Pythia8
+detector=Delphes
+analysis=OFF
+
+delphes_card_CMS.tcl
+set run_card ebeam1 7000
+set run_card ebeam2 7000
+set param_card mass 6 172.5
+set param_card mass 25 125.0
+set param_card yukawa 6 172.5
+
+decay t > w+ b, w+ > l v
+decay w+ > l v
+decay t~ > w- b~, w- > j j
+decay w- > j j
+set nevents 10
